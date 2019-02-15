@@ -13,50 +13,38 @@
 
         <link href="assets/css/style.css" type="text/css" rel="stylesheet">
 
-        <script src=""></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="assets/js/script.js" defer></script>
     </head>
 
     <body>
         <div class="header">
             <div class="container">
-                <a href="#banner">
-                    <img src="assets/images/herbapower_logo_transparent.png" class="header-logo">
-                </a>
+                <img src="assets/images/herbapower_logo_transparent.png" class="header-logo" data-scroll-to="#banner">
 
                 <ul class="header-nav">
-                    <a href="#overview">
-                        <li class="header-nav-item">
-                            OVERZICHT
-                        </li>
-                    </a>
-
-                    <a href="#news">
-                        <li class="header-nav-item">
-                            NIEUWS
-                        </li>
-                    </a>
-
-                    <a href="#about">
-                        <li class="header-nav-item">
-                            OVER ONS
-                        </li>
-                    </a>
-
-                    <a href="#contact">
-                        <li class="header-nav-item">
-                            CONTACT
-                        </li>
-                    </a>
-                </ul>
-
-                <ul class="header-tools">
-                    <li class="header-tools-tool">
-                        <img src="">
+                    <li class="header-nav-item" data-scroll-to="#overview">
+                        OVERZICHT
                     </li>
 
-                    <li class="header-tools-tool">
-                        <img src="">
+                    <li class="header-nav-item" data-scroll-to="#news">
+                        NIEUWS
+                    </li>
+
+                    <li class="header-nav-item" data-scroll-to="#about">
+                        OVER ONS
+                    </li>
+
+                    <li class="header-nav-item" data-scroll-to="#contact">
+                        CONTACT
+                    </li>
+
+                    <li class="header-nav-item tool" data-menu-open="shopping_bag">
+                        <img src="assets/images/shopping_bag.png">
+                    </li>
+
+                    <li class="header-nav-item tool">
+                        <img src="assets/images/profile.png" data-menu-open="profile">
                     </li>
                 </ul>
             </div>
@@ -65,25 +53,129 @@
         <div class="content">
             <section id="banner">
                 <div class="container">
+                    <h1 class="banner-title">
+                        <span class="banner-title-light">
+                            VERZORGING
+                        </span><br>
 
+                        <span class="banner-title-dark">
+                            SPORTVOEDING
+                        </span><br>
+
+                        <span class="banner-title-light">
+                            GEWICHTSBEHEERSING
+                        </span><br>
+
+                        <span class="banner-title-small">
+                            www.herbapower.nl
+                        </span>
+                    </h1>
                 </div>
             </section>
 
             <section id="overview">
                 <div class="container">
+                    <h1 class="title">
+                        Overzicht
+                    </h1>
 
+                    <div class="products"></div>
                 </div>
             </section>
+
+            <div class="photo" style="background: url('assets/images/photo 1.jpeg') center center no-repeat fixed;"></div>
+
+            <section id="news">
+                <div class="container">
+                    <h1 class="title">
+                        Nieuws
+                    </h1>
+                </div>
+            </section>
+
+            <div class="photo" style="background: url('assets/images/photo 2.jpeg') center center no-repeat fixed;"></div>
 
             <section id="about">
                 <div class="container">
+                    <h1 class="title">
+                        Over ons
+                    </h1>
 
+                    <p>
+                        Herbapower, opgericht in 2018, is een internationale beursgenoteerde organisatie met een eigen ontwikkeling en distributie van hoogwaardige producten ten behoeve van gewichtsbeheersing, sportvoeding en persoonlijke verzorging.
+                        Het verkoopteam verkoopt Herbapower producten in meer dan 90 landen wereldwijd met een netto verkoop van $5 miljard. Herbapower Nederland en België valt onder de EMEA regio bestaande uit 52 landen. Het EMEA hoofdkantoor is gevestigd in ‘s-Hertogenbosch.
+                    </p>
+
+                    <p>
+                        Begin 2018 is het hoofdkantoor Herbapower Nederland en België geopend in ‘s-Hertogenbosch ter ondersteuning van de Nederlandse en Belgische markt. Hier combineren we Call Center, Member Services en Sales & Marketing Support.
+                        In Utrecht is sinds 2019 het EMEA distributiecentrum gevestigd en met meer dan 260 medewerkers dragen we zorg voor de distributie van de Herbapower producten naar individuele Members binnen EMEA en naar andere Herbapower distributiecentra wereldwijd.
+                    </p>
                 </div>
             </section>
 
+            <div class="photo" style="background: url('assets/images/photo 3.jpeg') center center no-repeat fixed;"></div>
+
             <section id="contact">
                 <div class="container">
+                    <h1 class="title">
+                        Contact
+                    </h1>
 
+                    <form action="" method="post">
+                        <table>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Voornaam:
+                                    </label><br>
+
+                                    <input type="text" name="first_name" required>
+                                </td>
+
+                                <td>
+                                    <label>
+                                        Achternaam:
+                                    </label><br>
+
+                                    <input type="text" name="last_name" required>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>
+                                        E-mail:
+                                    </label><br>
+
+                                    <input type="text" name="email" required>
+                                </td>
+
+                                <td>
+                                    <label>
+                                        Woonplaats:
+                                    </label><br>
+
+                                    <input type="text" name="place" required>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <label>
+                                        Bericht:
+                                    </label><br>
+
+                                    <textarea rows="5" name="message"></textarea>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="submit" name="submit">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
                 </div>
             </section>
         </div>
@@ -96,22 +188,36 @@
             </div>
         </div>
 
-        <div class="menu" id="shopping_card">
+        <div class="menu" data-menu-name="profile">
             <div class="container">
-
+                <img src="assets/images/close.png" class="menu-close">
             </div>
         </div>
 
-        <div class="menu" id="product">
+        <div class="menu" data-menu-name="shopping_bag">
             <div class="container">
-
+                <img src="assets/images/close.png" class="menu-close">
             </div>
         </div>
 
-        <div class="menu" id="news">
-            <div class="container">
+        <div class="menu" data-menu-name="product">
 
-            </div>
+                <img src="assets/images/close.png" class="menu-close">
+
+                <div class="menu-left">
+                    <img class="menu-image" src="">
+                </div>
+
+                <div class="menu-right">
+                    <h1 class="menu-title">
+                        ...
+                    </h1>
+
+                    <p class="menu-description">
+
+                    </p>
+                </div>
+
         </div>
     </body>
 </html>
