@@ -19,7 +19,11 @@ body
 {
     background: #F1F2F6;
 }
+p
 
+{
+    font-size: 1em;
+}
 a
 {
     text-decoration: none;
@@ -94,7 +98,7 @@ a
 
 section
 {
-    min-height: 500px;
+    min-height: 300px;
 }
 
 section:not(#banner)
@@ -152,7 +156,7 @@ section .title
 .product
 {
     display: inline-block;
-    width: calc(80% / 4);
+    width: calc(77% / 4);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all ease-in-out 200ms;
     cursor: pointer;
@@ -169,7 +173,11 @@ section .title
 {
     padding: 20px;
 }
-
+ form
+{
+    width: fit-content;
+    margin: 0 auto;
+}
 .product:hover
 {
     transform: scale(1.05);
@@ -206,6 +214,11 @@ section .title
     transition: all linear 250ms;
 }
 
+.menu[data-menu-name="product"]
+{
+    
+}
+
 .menu.active
 {
     transform: scale(1);
@@ -220,7 +233,11 @@ section .title
     width: 30px;
     cursor: pointer;
 }
-
+body > div.menu.active > div.menu-left > img
+{
+    width: 120%;
+    height: 80%;
+}
 .menu-left
 {
     float: left;
