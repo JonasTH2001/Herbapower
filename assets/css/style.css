@@ -183,6 +183,37 @@ section .title
     transform: scale(1.05);
 }
 
+.item
+{
+    display: inline-block;
+    width: calc(77% / 4);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all ease-in-out 200ms;
+    cursor: pointer;
+    margin: 20px;
+    padding: 10px;
+}
+
+.item img
+{
+    width: 100%;
+}
+
+.item h1
+{
+    padding: 20px;
+}
+form
+{
+    width: fit-content;
+    margin: 0 auto;
+}
+.product:hover
+{
+    transform: scale(1.05);
+}
+
+
 .footer
 {
     height: var(--footer-height);

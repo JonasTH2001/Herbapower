@@ -62,6 +62,37 @@ var products = [
     }
 ];
 
+var news = [
+    {
+        id: 1,
+        title: 'News #1',
+        date: '02-20-2019',
+        content: '12345667',
+        image: '1.jpeg'
+    },
+    {
+        id: 2,
+        title: 'News #2',
+        date: '02-20-2019',
+        content: '12345667',
+        image: '1.jpeg'
+    },
+    {
+        id: 3,
+        title: 'News #3',
+        date: '02-20-2019',
+        content: '12345667',
+        image: '1.jpeg'
+    },
+    {
+        id: 4,
+        title: 'News #4',
+        date: '02-20-2019',
+        content: '12345667',
+        image: '1.jpeg'
+    }
+]
+
 var shopping_bag = [
     {
         product_id: 1,
@@ -85,6 +116,19 @@ for(var product in products)
                                     product.name +
                                 "</h1>" +
                             "</div>");
+}
+
+for(var item in news)
+{
+    var id = item;
+    item = news[item];
+
+    $('.news').append(" <div class='item' data-news-open='" + id + "'>" +
+                        "<img src='assets/images/products/" + item.image + "'>" +
+                            "<h1>" +
+                            item.title +
+                            "</h1>" +
+                        "</div>");
 }
 
 $('.menu-close').click(
