@@ -245,11 +245,6 @@ form
     transition: all linear 250ms;
 }
 
-.menu[data-menu-name="product"]
-{
-    
-}
-
 .menu.active
 {
     transform: scale(1);
@@ -300,4 +295,18 @@ body > div.menu.active > div.menu-left > img
     float: left;
     margin-top: 20px;
     margin-left: 200px;
+}
+
+.menu-button
+{
+    float: left;
+    margin-top: 20px;
+    margin-left: 200px;
+    padding: 10px 20px;
+    background: #658461;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
 }

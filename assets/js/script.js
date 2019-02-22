@@ -93,17 +93,7 @@ var news = [
     }
 ]
 
-var shopping_bag = [
-    {
-        product_id: 1,
-        amount: 5
-    },
-
-    {
-        product_id: 3,
-        amount: 2
-    }
-];
+var shopping_bag = [];
 
 for(var product in products)
 {
@@ -165,7 +155,16 @@ $('*').click(
         }
 
         if(open_menu != null) {
-            openMenu(open_menu);
+            if(open_menu == 'shopping_bag') {
+                openShoppingBag();
+            }
+            else {
+                openMenu(open_menu);
+            }
+        }
+
+        if(open_product != null) {
+            openProduct(open_product);
         }
 
         if(open_product != null) {
@@ -197,11 +196,41 @@ function openProduct(product_id)
     menu.find('.menu-title').text(product.name);
     menu.find('.menu-description').text(product.description);
     menu.find('.menu-image').attr('src', 'assets/images/products/' + product.image);
+    menu.find('.menu-button').unbind();
+    menu.find('.menu-button').click(
+        function()
+        {
+            addToBag(product_id);
+        }
+    );
+    menu.addClass('active');
+}
 
+function openShoppingBag()
+{
+    var menu =  $(".menu[data-menu-name='shopping_bag']");
+    menu.find('.menu-items').empty();
+
+    for(var item in shopping_bag) {
+        item = shopping_bag[item];
+        var product = products[item];
+
+        console.log(item);
+
+        menu.find('.menu-items').append("<li>" + product.name + "</li>");
+    }
     menu.addClass('active');
 }
 
 function closeMenus()
 {
     $('.menu').removeClass('active');
+}
+
+function addToBag(product_id)
+{
+    shopping_bag.push(product_id);
+    console.log(product_id);
+    closeMenus();
+    openShoppingBag();
 }
