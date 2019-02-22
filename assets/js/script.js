@@ -67,29 +67,29 @@ var news = [
         id: 1,
         title: 'News #1',
         date: '02-20-2019',
-        content: '12345667',
-        image: '1.jpeg'
+        content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.',
+        image: '3.jpeg'
     },
     {
         id: 2,
         title: 'News #2',
         date: '02-20-2019',
-        content: '12345667',
-        image: '1.jpeg'
+        content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.',
+        image: '4.jpeg'
     },
     {
         id: 3,
         title: 'News #3',
         date: '02-20-2019',
-        content: '12345667',
-        image: '1.jpeg'
+        content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.',
+        image: '3.jpeg'
     },
     {
         id: 4,
         title: 'News #4',
         date: '02-20-2019',
-        content: '12345667',
-        image: '1.jpeg'
+        content: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.',
+        image: '4.jpeg'
     }
 ]
 
@@ -114,7 +114,7 @@ for(var item in news)
     item = news[item];
 
     $('.news').append(" <div class='item' data-news-open='" + id + "'>" +
-                        "<img src='assets/images/products/" + item.image + "'>" +
+                        "<img src='assets/images/news/" + item.image + "'>" +
                             "<h1>" +
                             item.title +
                             "</h1>" +
@@ -127,6 +127,23 @@ $('.menu-close').click(
         closeMenus();
     }
 );
+
+$('.menu-button.reset').click(
+    function()
+    {
+        shopping_bag = [];
+        closeMenus();
+        openShoppingBag();
+    }
+);
+
+$('.menu-button.checkout').click(
+    function()
+    {
+        closeMenus();
+    }
+);
+
 
 $(window).scroll(
     function()
@@ -149,6 +166,7 @@ $('*').click(
         var scroll_to = item.data('scroll-to');
         var open_menu = item.data('menu-open');
         var open_product = item.data('product-open');
+        var open_news = item.data('news-open');
 
         if(scroll_to != null) {
             scrollTo(scroll_to);
@@ -167,8 +185,8 @@ $('*').click(
             openProduct(open_product);
         }
 
-        if(open_product != null) {
-            openProduct(open_product);
+        if(open_news != null) {
+            openNews(open_news);
         }
     }
 );
@@ -206,20 +224,35 @@ function openProduct(product_id)
     menu.addClass('active');
 }
 
+function openNews(news_id)
+{
+    var item = news[news_id];
+    var menu =  $(".menu[data-menu-name='news']");
+
+    closeMenus();
+    menu.find('.menu-title').text(item.title);
+    menu.find('.menu-description').text(item.content);
+    menu.find('.menu-image').attr('src', 'assets/images/news/' + item.image);
+    menu.addClass('active');
+}
+
+
 function openShoppingBag()
 {
     var menu =  $(".menu[data-menu-name='shopping_bag']");
+    var price = 0;
     menu.find('.menu-items').empty();
 
     for(var item in shopping_bag) {
         item = shopping_bag[item];
         var product = products[item];
 
-        console.log(item);
+        price += product.price;
 
-        menu.find('.menu-items').append("<li>" + product.name + "</li>");
+        menu.find('.menu-items').append("<li>" + product.name + " - " + product.description + " - €" + product.price + "</li>");
     }
     menu.addClass('active');
+    menu.find('.menu-total').text("€" + price + ",-");
 }
 
 function closeMenus()

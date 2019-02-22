@@ -192,6 +192,12 @@ section .title
     cursor: pointer;
     margin: 20px;
     padding: 10px;
+    transition: all ease-in-out 200ms;
+}
+
+.item:hover
+{
+    transform: scale(1.05);
 }
 
 .item img
@@ -241,8 +247,9 @@ form
     z-index: 999;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
     transform: scale(0);
-    overflow: none;
+    overflow: auto;
     transition: all linear 250ms;
+    padding: 40px;
 }
 
 .menu.active
@@ -309,4 +316,74 @@ body > div.menu.active > div.menu-left > img
     color: #fff;
     font-weight: bold;
     cursor: pointer;
+}
+
+.menu-button.checkout
+{
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    margin: 0;
+}
+
+.menu-button.reset
+{
+    position: absolute;
+    bottom: 25px;
+    right: 180px;
+    margin: 0;
+}
+
+.menu-items li
+{
+    padding: 20px 0px;
+    list-style: none;
+}
+
+.menu-total
+{
+    position: absolute;
+    bottom: 100px;
+    right: 25px;
+    margin: 0;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.menu-name
+{
+    font-size: 50px;
+}
+
+label
+{
+    margin-left: 12px;
+    padding: 5px 0px;
+    float: left;
+}
+
+textarea
+{
+    width: calc(100% - 35px);
+    padding: 5px;
+}
+
+form input[type=submit]
+{
+    width: calc(100% - 24px);
+    height: 50px;
+    background: #658361;
+    margin-top: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+}
+
+form input:not([type=submit])
+{
+    margin: 10px;
+    padding: 5px;
+    height: 25px;
+    width: 350px;
 }
