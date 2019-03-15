@@ -307,7 +307,6 @@ body
 form
 {
     margin: 0 auto;
-    width: fit-content;
     width: 500px;
 }
 
@@ -318,14 +317,9 @@ form label
     font-size: 20px;
 }
 
-form td:first-child input
-{
-    margin-right: 20px;
-}
-
 form input
 {
-    width: 80%;
+    width: 500px;
     margin-bottom: 20px;
     height: 40px;
     border: 2px solid #2F3542;
@@ -334,7 +328,7 @@ form input
 
 form textarea
 {
-    width: 80%;
+    width: 500px;
     resize: vertical;
     border: 2px solid #2F3542;
     background: transparent;
@@ -343,7 +337,7 @@ form textarea
 form button
 {
     margin-top: 40px;
-    width: 100%;
+    width: 500px;
     height: 50px;
     background: #2F3542;
     font-size: 20px;
@@ -389,6 +383,27 @@ form button
     height: 40px;
     cursor: pointer;
 }
+
+.menu[data-menu-name="shopping_cart"] .menu-tools
+{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    list-style: none;
+}
+
+.menu[data-menu-name="shopping_cart"] .menu-tools button
+{
+    width: 150px;
+    height: 50px;
+    background: #658361;
+    font-size: 18px;
+    border: none;
+    color: #F8FAE4;
+    font-weight: 600;
+}
+
+
 
 @media only screen and (max-width: 1000px)
 {
