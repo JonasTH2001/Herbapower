@@ -19,20 +19,12 @@ body
 {
     background: #F1F2F6;
 }
-p
-
-{
-    font-size: 1em;
-}
-a
-{
-    text-decoration: none;
-}
 
 .container
 {
     margin: 0 auto;
     width: 80%;
+    overflow: hidden;
 }
 
 .header
@@ -41,7 +33,7 @@ a
     top: 0;
     left: 0;
     height: var(--header-height);
-    line-height: var(--header-height);
+    line-height: calc(var(--header-height) + 10px);
     width: 100%;
     background: #2F3542;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -50,88 +42,125 @@ a
 
 .header-logo
 {
+    position: fixed;
+    top: 5px;
     float: left;
-    height: calc(var(--header-height) + 60px);
-    transition: all linear 150ms;
-    cursor: pointer;
+    height: 160px;
+    z-index: 10;
+    transition: all ease-in-out 250ms;
 }
 
-.header.active .header-logo
+.header-big
 {
-    height: var(--header-height);
+    display: block;
 }
 
-.header-nav
+.header-big-navigator
 {
     float: right;
-    width: fit-content;
     list-style: none;
-    margin: 0 auto;
 }
 
-.header-nav-item
+.header-big-navigator-item
 {
+    margin: 0px 20px;
     display: inline-block;
-    margin-left: 40px;
-    color: #fff;
-    font-weight: 500;
-    text-align: center;
+    color: #F8FAE4;
     cursor: pointer;
 }
 
-.header-nav-item.tool:last-child
-{
-    margin-left: 5px;
-}
-
-.header-nav-item img
+.header-big-navigator-item img
 {
     height: 25px;
+}
+
+.header-small
+{
+    float: right;
+    display: none;
+}
+
+.header-small-icon
+{
+    color: #F8FAE4;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.header-small-navigator
+{
+    position: fixed;
+    left: -100%;
+    top: var(--header-height);
+    width: 100%;
+    height: var(--content-height);
+    background: #D0DD97;
+    transition: all ease-in-out 400ms;
+}
+
+.header-small-navigator.active
+{
+    left: 0;
+}
+
+.header-small-navigator-item
+{
+    padding: 10px 0px;
+    text-align: center;
+    color: #2F3542;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 600;
 }
 
 .content
 {
     margin-top: var(--header-height);
-    min-height: var(--content-height);
-    width: 100%;
 }
 
-section
+.section
 {
-    min-height: 300px;
+    padding: 50px 0px;
+    min-height: 250px;
 }
 
-section:not(#banner)
+.section-title
 {
-    padding: 50px;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 40px;
+    color: #658361;
     text-align: center;
 }
 
-section#banner
+.section-description
 {
-    height: calc(80vh - var(--header-height));
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../images/banner.jpeg') center center no-repeat fixed;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    padding-bottom: 40px;
+}
+
+.wrapper
+{
+    height: 250px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/background.jpeg') center center fixed no-repeat;
     background-size: cover;
 }
 
-section .title
+.banner
 {
-    padding-bottom: 60px;
-    font-size: 40px;
-    color: #658361;
-    font-weight: bold;
-    text-transform: uppercase;
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/background.jpeg') center center fixed no-repeat;
+    background-size: cover;
 }
 
 .banner-title
 {
-    padding-top: 100px;
-    font-size: 60px;
-}
-
-.banner-title-dark
-{
-    color: #D0DD97;
+    margin-top: 100px;
+    font-size: 65px;
 }
 
 .banner-title-light
@@ -139,101 +168,197 @@ section .title
     color: #F8FAE4;
 }
 
-.banner-title-small
+.banner-title-dark
 {
     color: #D0DD97;
-    font-size: 30px;
-    font-weight: 400;
 }
 
-.photo
+.banner-subtitle
 {
-    width: 100%;
-    height: 500px;
-    background-size: cover;
+    font-size: 30px;
+    color: #D0DD97;
+}
+
+.products
+{
+    text-align: center;
 }
 
 .product
 {
     display: inline-block;
-    width: calc(77% / 4);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: all ease-in-out 200ms;
-    cursor: pointer;
-    margin: 20px;
-    padding: 10px;
+    margin: 40px;
+    padding: 40px;
+    width: 250px;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all ease-in-out 150ms;
 }
 
-.product img
+.product:hover
+{
+    transform: scale(0.95);
+}
+
+.product-banner
 {
     width: 100%;
 }
 
-.product h1
+.product-price
 {
-    padding: 20px;
-}
- form
-{
-    width: fit-content;
-    margin: 0 auto;
-}
-.product:hover
-{
-    transform: scale(1.05);
+    margin-top: 20px;
+    font-size: 40px;
+    text-align: center;
 }
 
-.item
+.product-title
+{
+    margin-top: 10px;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.product-button
+{
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background: #658361;
+    color: #F8FAE4;
+    border: none;
+    cursor: pointer;
+    transition: all ease-in-out 150ms;
+}
+
+.product-button:hover
+{
+    color: #658361;
+    background: #D0DD97;
+}
+
+.messages
+{
+    text-align: center;
+}
+
+.message
 {
     display: inline-block;
-    width: calc(77% / 4);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: all ease-in-out 200ms;
-    cursor: pointer;
-    margin: 20px;
-    padding: 10px;
-    transition: all ease-in-out 200ms;
+    margin: 40px;
+    padding: 40px;
+    width: 250px;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all ease-in-out 150ms;
 }
 
-.item:hover
+.message:hover
 {
-    transform: scale(1.05);
+    transform: scale(0.95);
 }
 
-.item img
+.message-banner
 {
     width: 100%;
 }
 
-.item h1
+.message-title
 {
-    padding: 20px;
-}
-form
-{
-    width: fit-content;
-    margin: 0 auto;
-}
-.product:hover
-{
-    transform: scale(1.05);
+    margin-top: 10px;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
+.message-description
+{
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.message-button
+{
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background: #658361;
+    color: #F8FAE4;
+    border: none;
+    cursor: pointer;
+    transition: all ease-in-out 150ms;
+}
+
+.message-button:hover
+{
+    color: #658361;
+    background: #D0DD97;
+}
+
+form
+{
+    margin: 0 auto;
+    width: fit-content;
+}
+
+form label
+{
+    margin: 10px 0px;
+    display: block;
+    font-size: 20px;
+}
+
+form td:first-child input
+{
+    margin-right: 20px;
+}
+
+form input
+{
+    width: 80%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    height: 40px;
+    border: 2px solid #2F3542;
+    background: transparent;
+}
+
+form textarea
+{
+    width: 80%;
+    max-width: 500px;
+    resize: vertical;
+    border: 2px solid #2F3542;
+    background: transparent;
+}
+
+form button
+{
+    margin-top: 40px;
+    width: 100%;
+    height: 50px;
+    background: #2F3542;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
 
 .footer
 {
     height: var(--footer-height);
-    line-height: var(--footer-height);
-    width: 100%;
     background: #658361;
-    text-align: center;
-}
-
-.footer-text
-{
-    color: #fff;
-    font-size: 20px;
-    font-weight: 500;
 }
 
 .menu
@@ -241,15 +366,14 @@ form
     position: fixed;
     top: 20vh;
     left: 20%;
-    height: 60vh;
     width: 60%;
+    height: 60vh;
     background: #fff;
-    z-index: 999;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
-    transform: scale(0);
     overflow: auto;
-    transition: all linear 250ms;
-    padding: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all ease-in-out 250ms;
+    transform: scale(0);
+    z-index: 101;
 }
 
 .menu.active
@@ -260,130 +384,41 @@ form
 .menu-close
 {
     position: absolute;
-    right: 25px;
-    top: 25px;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-}
-body > div.menu.active > div.menu-left > img
-{
-    width: 120%;
-    height: 80%;
-}
-.menu-left
-{
-    float: left;
-    width: 50%;
-}
-
-.menu-left .menu-image
-{
-    width: 680px;
-    height: 430px;
-    padding: 60px;
-}
-
-.menu-right
-{
-    float: right;
-    width: 50%;
-}
-
-.menu-title
-{
-    float: left;
-    margin-top: 55px;
-    margin-left: 200px;
-}
-
-.menu-description
-{
-    float: left;
-    margin-top: 20px;
-    margin-left: 200px;
-}
-
-.menu-button
-{
-    float: left;
-    margin-top: 20px;
-    margin-left: 200px;
-    padding: 10px 20px;
-    background: #658461;
-    border: none;
-    font-size: 18px;
-    color: #fff;
-    font-weight: bold;
+    right: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
 }
 
-.menu-button.checkout
+@media only screen and (max-width: 1000px)
 {
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
-    margin: 0;
+    .container
+    {
+        width: 90%;
+    }
+
+    .header-logo
+    {
+        height: 100px;
+    }
+
+    .header-big
+    {
+        display: none;
+    }
+
+    .header-small
+    {
+        display: block;
+    }
+
+    .menu
+    {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+    }
 }
 
-.menu-button.reset
-{
-    position: absolute;
-    bottom: 25px;
-    right: 180px;
-    margin: 0;
-}
-
-.menu-items li
-{
-    padding: 20px 0px;
-    list-style: none;
-}
-
-.menu-total
-{
-    position: absolute;
-    bottom: 100px;
-    right: 25px;
-    margin: 0;
-    font-weight: bold;
-    font-size: 50px;
-}
-
-.menu-name
-{
-    font-size: 50px;
-}
-
-label
-{
-    margin-left: 12px;
-    padding: 5px 0px;
-    float: left;
-}
-
-textarea
-{
-    width: calc(100% - 35px);
-    padding: 5px;
-}
-
-form input[type=submit]
-{
-    width: calc(100% - 24px);
-    height: 50px;
-    background: #658361;
-    margin-top: 20px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 18px;
-    border: none;
-}
-
-form input:not([type=submit])
-{
-    margin: 10px;
-    padding: 5px;
-    height: 25px;
-    width: 350px;
-}

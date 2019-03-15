@@ -20,38 +20,72 @@
     <body>
         <div class="header">
             <div class="container">
-                <img src="assets/images/herbapower_logo_transparent.png" class="header-logo" data-scroll-to="#banner">
+                <img class="header-logo" src="assets/images/logo.png" data-scroll-to=".banner">
 
-                <ul class="header-nav">
-                    <li class="header-nav-item" data-scroll-to="#overview">
-                        OVERZICHT
-                    </li>
+                <div class="header-big">
+                    <ul class="header-big-navigator">
+                        <li class="header-big-navigator-item" data-scroll-to=".overview">
+                            OVERZICHT
+                        </li>
 
-                    <li class="header-nav-item" data-scroll-to="#news">
-                        NIEUWS
-                    </li>
+                        <li class="header-big-navigator-item" data-scroll-to=".news">
+                            NIEUWS
+                        </li>
 
-                    <li class="header-nav-item" data-scroll-to="#about">
-                        OVER ONS
-                    </li>
+                        <li class="header-big-navigator-item" data-scroll-to=".about-us">
+                            OVER ONS
+                        </li>
 
-                    <li class="header-nav-item" data-scroll-to="#contact">
-                        CONTACT
-                    </li>
+                        <li class="header-big-navigator-item" data-scroll-to=".contact">
+                            CONTACT
+                        </li>
 
-                    <li class="header-nav-item tool" data-menu-open="shopping_bag">
-                        <img src="assets/images/shopping_bag.png">
-                    </li>
+                        <li class="header-big-navigator-item" data-open-menu="profile">
+                            <img src="assets/images/icons/profile.png" class="header-big-navigator-item-image">
+                        </li>
 
-                    <li class="header-nav-item tool">
-                        <img src="assets/images/profile.png" data-menu-open="profile">
-                    </li>
-                </ul>
+                        <li class="header-big-navigator-item" data-open-menu="profile">
+                            <img src="assets/images/icons/shopping_bag.png" class="header-big-navigator-item-image">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="header-small">
+                    <h1 class="header-small-icon">
+                        ☰
+                    </h1>
+
+                    <ul class="header-small-navigator">
+                        <li class="header-small-navigator-item" data-scroll-to=".overview">
+                            OVERZICHT
+                        </li>
+
+                        <li class="header-small-navigator-item" data-scroll-to=".news">
+                            NIEUWS
+                        </li>
+
+                        <li class="header-small-navigator-item" data-scroll-to=".about-us">
+                            OVER ONS
+                        </li>
+
+                        <li class="header-small-navigator-item" data-scroll-to=".contact">
+                            CONTACT
+                        </li>
+
+                        <li class="header-small-navigator-item" data-open-menu="profile">
+                            PROFILE
+                        </li>
+
+                        <li class="header-small-navigator-item" data-open-menu="profile">
+                            SHOPPING CART
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <div class="content">
-            <section id="banner">
+            <section class="section banner">
                 <div class="container">
                     <h1 class="banner-title">
                         <span class="banner-title-light">
@@ -64,18 +98,18 @@
 
                         <span class="banner-title-light">
                             GEWICHTSBEHEERSING
-                        </span><br>
-
-                        <span class="banner-title-small">
-                            www.herbapower.nl
                         </span>
                     </h1>
+
+                    <p class="banner-subtitle">
+                        www.herbapower.nl
+                    </p>
                 </div>
             </section>
 
-            <section id="overview">
+            <section class="section overview">
                 <div class="container">
-                    <h1 class="title">
+                    <h1 class="section-title">
                         Overzicht
                     </h1>
 
@@ -83,96 +117,104 @@
                 </div>
             </section>
 
-            <div class="photo" style="background: url('assets/images/photo 1.jpeg') center center no-repeat fixed;"></div>
+            <section class="section wrapper"></section>
 
-            <section id="news">
+            <section class="section news">
                 <div class="container">
-                    <h1 class="title">
+                    <h1 class="section-title">
                         Nieuws
                     </h1>
-                    <div class="news"></div>
+
+                    <div class="messages"></div>
                 </div>
             </section>
 
-            <div class="photo" style="background: url('assets/images/photo 2.jpeg') center center no-repeat fixed;"></div>
+            <section class="section wrapper"></section>
 
-            <section id="about">
+            <section class="section about-us">
                 <div class="container">
-                    <h1 class="title">
+                    <h1 class="section-title">
                         Over ons
                     </h1>
 
-                    <p>
-                        Herbapower, opgericht in 2018, is een internationale beursgenoteerde organisatie met een eigen ontwikkeling en distributie van hoogwaardige producten ten behoeve van gewichtsbeheersing, sportvoeding en persoonlijke verzorging.
-                        Het verkoopteam verkoopt Herbapower producten in meer dan 90 landen wereldwijd met een netto verkoop van $5 miljard. Herbapower Nederland en België valt onder de EMEA regio bestaande uit 52 landen. Het EMEA hoofdkantoor is gevestigd in ‘s-Hertogenbosch.
-                    </p>
+                    <p class="section-description">
+                        Herbapower, opgericht in 2018,<br>
+                        is een internationale beursgenoteerde organisatie met een eigen ontwikkeling en distributie van hoogwaardige producten ten behoeve van gewichtsbeheersing, <br>
+                        sportvoeding en persoonlijke verzorging. Het verkoopteam verkoopt Herbapower producten in meer dan 90 landen wereldwijd met een netto verkoop van $5 miljard. <br>
+                        Herbapower Nederland en België valt onder de EMEA regio bestaande uit 52 landen. Het EMEA hoofdkantoor is gevestigd in ‘s-Hertogenbosch.<br><br>
 
-                    <p>
-                        Begin 2018 is het hoofdkantoor Herbapower Nederland en België geopend in ‘s-Hertogenbosch ter ondersteuning van de Nederlandse en Belgische markt. Hier combineren we Call Center, Member Services en Sales & Marketing Support.
+                        Begin 2018 is het hoofdkantoor Herbapower Nederland en België geopend in ‘s-Hertogenbosch ter ondersteuning van de Nederlandse en Belgische markt.
+                        Hier combineren we Call Center, Member Services en Sales & Marketing Support.<br>
                         In Utrecht is sinds 2019 het EMEA distributiecentrum gevestigd en met meer dan 260 medewerkers dragen we zorg voor de distributie van de Herbapower producten naar individuele Members binnen EMEA en naar andere Herbapower distributiecentra wereldwijd.
                     </p>
                 </div>
             </section>
 
-            <div class="photo" style="background: url('assets/images/photo 3.jpeg') center center no-repeat fixed;"></div>
+            <section class="section wrapper"></section>
 
-            <section id="contact">
+            <section class="section contact">
                 <div class="container">
-                    <h1 class="title">
+                    <h1 class="section-title">
                         Contact
                     </h1>
 
-                    <form action="" method="post">
+                    <form>
                         <table>
                             <tr>
                                 <td>
                                     <label>
-                                        Voornaam:
-                                    </label><br>
+                                        Voornaam
+                                    </label>
 
-                                    <input type="text" name="first_name" required autocomplete="off">
-                                </td>
-
-                                <td>
-                                    <label>
-                                        Achternaam:
-                                    </label><br>
-
-                                    <input type="text" name="last_name" required autocomplete="off">
+                                    <input type="text" name="voornaam" required>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td>
                                     <label>
-                                        E-mail:
-                                    </label><br>
+                                        Achternaam
+                                    </label>
 
-                                    <input type="text" name="email" required autocomplete="off">
-                                </td>
-
-                                <td>
-                                    <label>
-                                        Woonplaats:
-                                    </label><br>
-
-                                    <input type="text" name="place" required autocomplete="off">
+                                    <input type="text" name="achternaam" required>
                                 </td>
                             </tr>
 
                             <tr>
-                                <td colspan="2">
+                                <td>
                                     <label>
-                                        Bericht:
-                                    </label><br>
+                                        Email
+                                    </label>
 
-                                    <textarea rows="5" name="message"></textarea>
+                                    <input type="email" name="email" required>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>
+                                        Woonplaats
+                                    </label>
+
+                                    <input type="text" name="woonplaats" required>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td colspan="2">
-                                    <input type="submit" name="submit">
+                                    <label>
+                                        Bericht
+                                    </label>
+
+                                    <textarea rows="6"></textarea>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <button>
+                                        Verzenden
+                                    </button>
                                 </td>
                             </tr>
                         </table>
@@ -182,77 +224,15 @@
         </div>
 
         <div class="footer">
-            <div class="container">
-                <p class="footer-text">
-                    &copy; HERBAPOWER 2019
-                </p>
-            </div>
-        </div>
 
-        <div class="menu" data-menu-name="news">
-            <img src="assets/images/close.png" class="menu-close">
-
-            <div class="menu-left">
-                <img class="menu-image" src="">
-            </div>
-
-            <div class="menu-right">
-                <h1 class="menu-title">
-                    ...
-                </h1>
-
-                <p class="menu-description">
-
-                </p>
-            </div>
         </div>
 
         <div class="menu" data-menu-name="profile">
-            <img src="assets/images/close.png" class="menu-close">
-        </div>
-
-        <div class="menu" data-menu-name="shopping_bag">
-            <img src="assets/images/close.png" class="menu-close">
-
-            <h1 class="menu-name">
-                Shopping bag
-            </h1>
-
-            <ul class="menu-items"></ul>
-
-            <p class="menu-total">
-                0.00
-            </p>
-
-            <button class="menu-button reset">
-                RESET
-            </button>
-
-            <button class="menu-button checkout">
-                CHECKOUT
-            </button>
+            <img src="assets/images/icons/close.png" class="menu-close">
         </div>
 
         <div class="menu" data-menu-name="product">
-            <img src="assets/images/close.png" class="menu-close">
-
-            <div class="menu-left">
-                <img class="menu-image" src="">
-            </div>
-
-            <div class="menu-right">
-                <h1 class="menu-title">
-                    ...
-                </h1>
-
-                <p class="menu-description">
-
-                </p>
-
-                <button class="menu-button">
-                    ADD TO CARD
-                </button>
-            </div>
+            <img src="assets/images/icons/close.png" class="menu-close">
         </div>
     </body>
 </html>
