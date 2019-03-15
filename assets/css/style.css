@@ -149,7 +149,6 @@ body
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/background.jpeg') center center fixed no-repeat;
     background-size: cover;
 }
-
 .banner
 {
     height: 60vh;
