@@ -187,7 +187,7 @@ body
 .product
 {
     display: inline-block;
-    margin: 40px;
+    margin: 20px;
     padding: 40px;
     width: 250px;
     background: #fff;
@@ -249,7 +249,7 @@ body
 .message
 {
     display: inline-block;
-    margin: 40px;
+    margin: 20px;
     padding: 40px;
     width: 250px;
     background: #fff;
@@ -308,6 +308,7 @@ form
 {
     margin: 0 auto;
     width: fit-content;
+    width: 500px;
 }
 
 form label
@@ -325,7 +326,6 @@ form td:first-child input
 form input
 {
     width: 80%;
-    max-width: 500px;
     margin-bottom: 20px;
     height: 40px;
     border: 2px solid #2F3542;
@@ -335,7 +335,6 @@ form input
 form textarea
 {
     width: 80%;
-    max-width: 500px;
     resize: vertical;
     border: 2px solid #2F3542;
     background: transparent;
