@@ -62,7 +62,7 @@ var news = [
         image: 'news.jpeg'
     },
 ];
-var shopping_bag = [
+var shopping_cart = [
 
 ];
 
@@ -81,8 +81,8 @@ for(var product in products)
                                     product.name +
                                 "</h1>" +
 
-                                "<button class='product-button' data-open-menu='product'>" +
-                                    "BEKIJKEN" +
+                                "<button class='product-button' data-product-id='" + product.id + "'>" +
+                                    "TOEVOEGEN" +
                                 "</button>" +
                             "</div>");
 }
@@ -107,6 +107,23 @@ for(var message in news)
                                 "</button>" +
                             "</div>");
 }
+
+$('.product-button').click(
+    function()
+    {
+        var id = $(this).data('product-id');
+
+        if(shopping_cart[id] != null) {
+            shopping_cart[id] += 1;
+        }
+        else {
+            shopping_cart[id] = 1;
+        }
+
+        updateShoppingCart();
+        openMenu('shopping_cart');
+    }
+);
 
 $('.header-small-icon').click(
     function()
@@ -161,6 +178,44 @@ $(window).scroll(
         }
     }
 );
+
+function updateShoppingCart()
+{
+    var total = 0;
+
+    $('.cart-tablenames tbody').html("");
+
+    for(var key in shopping_cart) {
+        var current = null;
+        var value = shopping_cart[key];
+
+        for(var product in products) {
+            product = products[product];
+
+            if(product.id = key) {
+                current = product;
+            }
+        }
+
+        total += (value * current.price);
+
+        $('.cart-tablenames tbody').append("  <tr>" +
+                                        "<td><label class='cart-product-name'>" +
+                                        current.name +
+                                        "</label></td>" +
+                                        "" +
+                                        "<td><label class='cart-product-price'>" +
+                                        current.price +
+                                        "</label></td>" +
+                                        "" +
+                                        "<td><label class='cart-product-quantity'>" +
+                                            value +
+                                        "</label></td>" +
+                                        "</tr>");
+    }
+
+    $('.total-price-value').text(total);
+}
 
 function scrollTo(to)
 {
